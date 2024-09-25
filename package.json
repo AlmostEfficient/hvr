@@ -1,0 +1,21 @@
+{
+  "name": "hvr",
+  "type": "module",
+  "workspaces": [
+    "frontend",
+    "server"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "concurrently": "^9.0.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+	"scripts": {
+		"dev": "concurrently 'bun --filter frontend dev' 'bun --filter server dev'",
+		"start": "bun --filter server start",
+		"build": "bun --filter frontend build",
+		"install": "concurrently 'bun --filter frontend install' 'bun --filter server install'"
+	}
+}
